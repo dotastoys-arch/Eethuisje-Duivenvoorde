@@ -7,20 +7,54 @@
   --color-brand-olive: #5A5A40;
   --color-brand-cream: #F5F2ED;
   --color-brand-ink: #1A1A1A;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
 }
 
 body {
-  @apply bg-brand-cream text-brand-ink font-sans;
+  @apply bg-brand-cream text-brand-ink font-sans antialiased selection:bg-brand-olive/20;
+  /* Mobile-only focus: prevent horizontal scroll and optimize for touch */
+  overflow-x: hidden;
+  touch-action: manipulation;
 }
 
-h1, h2, h3, h4 {
-  @apply font-serif;
+/* Accessibility: Focus states */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand-olive;
+}
+
+/* Micro-interactions */
+.tap-highlight-none {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .glass-panel {
-  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+  @apply bg-white/90 backdrop-blur-xl border border-white/20 shadow-xl;
 }
 
-.menu-item-row {
-  @apply border-b border-brand-olive/10 py-3 flex justify-between items-baseline;
+/* Mobile-only navigation bar at bottom */
+.mobile-nav {
+  @apply fixed bottom-0 left-0 right-0 h-20 bg-white/80 backdrop-blur-lg border-t border-brand-olive/10 z-40 flex items-center justify-around px-4;
+}
+
+.nav-item {
+  @apply flex flex-col items-center gap-1 text-[10px] uppercase tracking-widest font-semibold text-brand-ink/40 transition-colors;
+}
+
+.nav-item.active {
+  @apply text-brand-olive;
+}
+
+/* 2026 Visual Stability */
+img {
+  content-visibility: auto;
+}
+
+@keyframes slow-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite alternate;
 }
