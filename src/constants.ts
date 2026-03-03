@@ -30,7 +30,7 @@ export const MENU_DATA = {
 
 export const ESTATE_INFO = {
   name: "Eethuisje Duivenvoorde",
-  description: "Een modern en gezellig eethuisje in Wassenaar. Bekend om onze verse patat, ambachtelijke snacks en persoonlijke service in een sfeervolle omgeving.",
+  description: "Gewoon een goed eethuisje in Wassenaar. Voor je dagelijkse portie verse patat, lekkere snacks en een koud drankje. Snel, simpel en altijd gezellig.",
   location: "Van Duivenvoordelaan 558, 2241 TH Wassenaar",
   phone: "070 331 6766",
   hours: {

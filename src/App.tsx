@@ -17,44 +17,37 @@ export default function App() {
       <main className="max-w-lg mx-auto">
         <Hero />
         
-        {/* About Section - 2026 Style */}
-        <section className="py-16 px-6 bg-white rounded-t-[2.5rem] -mt-10 relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
+        {/* About Section - Friendly & Inviting */}
+        <section className="py-16 px-6 bg-white text-brand-ink relative z-20 rounded-t-[3rem] -mt-10 shadow-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-2 mb-6">
-              <span className="w-8 h-[2px] bg-brand-olive"></span>
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-olive">Onze Passie</span>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-[4px] bg-brand-red rounded-full"></div>
+              <h2 className="text-3xl font-black">Echt lekker.</h2>
             </div>
-            <h2 className="text-4xl mb-8 leading-tight font-serif">Versgebakken <br /> <span className="italic">Kwaliteit</span></h2>
             
-            <div className="space-y-6 text-brand-ink/70 leading-relaxed text-sm">
-              <p>
-                Bij {ESTATE_INFO.name} draait alles om de beleving. In ons moderne glazen paviljoen geniet u van de beste snacks van Wassenaar, bereid met passie en de beste ingrediënten.
+            <div className="space-y-8 text-brand-ink/70 font-medium leading-relaxed">
+              <p className="text-lg">
+                Bij Eethuisje Duivenvoorde houden we het simpel en goed. Elke dag bakken we de lekkerste verse patat en hebben we een ruim assortiment aan snacks voor de hele familie.
               </p>
               
-              {/* Video Testimonial Placeholder (Social Proof 2.0) */}
-              <div className="relative aspect-video rounded-3xl overflow-hidden bg-brand-olive/10 group cursor-pointer">
+              <div className="relative aspect-video rounded-[2rem] overflow-hidden bg-brand-bg shadow-inner">
                 <img 
-                  src="https://picsum.photos/seed/happy-guest/800/450" 
-                  alt="Video Testimonial" 
-                  className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+                  src="https://picsum.photos/seed/fries/1200/675" 
+                  alt="Onze Verse Patat" 
+                  className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-xl">
-                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-brand-olive border-b-[6px] border-b-transparent ml-1"></div>
-                  </div>
-                </div>
-                <div className="absolute bottom-4 left-4 text-[10px] font-bold text-white uppercase tracking-widest bg-brand-ink/40 px-2 py-1 rounded backdrop-blur-sm">
-                  Live Gast-ervaring
+                <div className="absolute bottom-4 left-4 bg-brand-yellow text-brand-ink px-4 py-2 rounded-xl font-black text-sm shadow-lg">
+                  ELKE DAG VERS
                 </div>
               </div>
 
-              <p>
-                Binnen voelt u direct de warmte van ons houten interieur. Het is de perfecte plek voor een snelle hap of een gezellig moment met vrienden.
+              <p className="text-sm">
+                Kom gezellig langs in ons paviljoen of haal je bestelling snel af. We staan altijd voor je klaar met een goeie hap en een glimlach.
               </p>
             </div>
           </motion.div>
@@ -62,61 +55,59 @@ export default function App() {
 
         <Menu />
 
-        {/* Reviews Section - Mobile Optimized */}
-        <section className="py-16 bg-brand-olive text-brand-cream">
+        {/* Reviews Section - Friendly Cards */}
+        <section className="py-20 bg-brand-bg">
           <div className="px-6">
-            <h2 className="text-3xl mb-8 font-serif italic">Wat gasten zeggen</h2>
-            <div className="flex overflow-x-auto gap-4 pb-8 snap-x no-scrollbar">
+            <h2 className="text-4xl font-black mb-10">Wat anderen <br /> <span className="text-brand-red">vinden</span></h2>
+            <div className="flex overflow-x-auto gap-6 pb-4 snap-x no-scrollbar">
               {[
-                { text: "Gezellige cafetaria, erg goede patat.", author: "Viavier" },
-                { text: "Tasty food. Yummy milkshakes. Friendly owners.", author: "Koen Zomers" },
+                { text: "Erg goede patat en vriendelijke mensen.", author: "Viavier" },
+                { text: "Tasty food. Yummy milkshakes.", author: "Koen Zomers" },
                 { text: "De hamburger was super lekker!", author: "Lana Lana" }
               ].map((rev, i) => (
                 <div 
                   key={i}
-                  className="min-w-[260px] p-6 rounded-2xl bg-white/10 backdrop-blur-sm snap-center border border-white/10"
+                  className="min-w-[280px] p-8 bg-white rounded-[2rem] snap-center shadow-lg border border-brand-red/5"
                 >
-                  <p className="italic mb-4 text-sm leading-relaxed">"{rev.text}"</p>
-                  <p className="text-[10px] font-bold opacity-60 uppercase tracking-widest">— {rev.author}</p>
+                  <p className="text-lg font-bold mb-6 leading-tight text-brand-ink">"{rev.text}"</p>
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 bg-brand-yellow rounded-full"></div>
+                    <p className="text-xs font-black uppercase tracking-widest text-brand-ink/40">— {rev.author}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Contact - Clean Utility */}
-        <section className="py-16 px-6 bg-brand-cream">
-          <h2 className="text-3xl mb-10 font-serif">Bezoek ons</h2>
-          <div className="space-y-8">
-            <div className="glass-panel p-6 rounded-3xl">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-brand-olive mb-4">Openingstijden</h3>
-              <div className="space-y-2 text-xs">
+        {/* Contact - Clean & Clear */}
+        <section className="py-20 px-6 bg-white">
+          <div className="flex items-center gap-3 mb-10">
+            <div className="w-10 h-[4px] bg-brand-red rounded-full"></div>
+            <h2 className="text-3xl font-black">Contact & Tijden</h2>
+          </div>
+          
+          <div className="space-y-10">
+            <div className="bg-brand-bg p-8 rounded-[2.5rem] border border-brand-red/5">
+              <h3 className="text-xs font-black uppercase tracking-widest text-brand-red mb-6">OPENINGSTIJDEN</h3>
+              <div className="space-y-4 text-lg font-bold">
                 {Object.entries(ESTATE_INFO.hours).map(([day, hours]) => (
-                  <div key={day} className="flex justify-between border-b border-brand-olive/5 pb-1">
-                    <span className="capitalize opacity-60">{day}</span>
-                    <span className="font-semibold">{hours}</span>
+                  <div key={day} className="flex justify-between border-b border-brand-red/5 pb-2">
+                    <span className="capitalize text-brand-ink/40">{day}</span>
+                    <span className="text-brand-ink">{hours}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="flex flex-col gap-4">
-              <a href={`tel:${ESTATE_INFO.phone}`} className="flex items-center gap-4 p-4 glass-panel rounded-2xl tap-highlight-none">
-                <div className="w-10 h-10 bg-brand-olive text-white rounded-full flex items-center justify-center">
-                  <Phone size={18} />
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest opacity-40">Telefoon</p>
-                  <p className="font-serif text-lg">{ESTATE_INFO.phone}</p>
-                </div>
+
+            <div className="grid grid-cols-1 gap-4">
+              <a href={`tel:${ESTATE_INFO.phone}`} className="btn-friendly bg-brand-red text-white flex items-center gap-4 px-8">
+                <Phone size={24} />
+                <span>BEL ONS DIRECT</span>
               </a>
-              <div className="flex items-center gap-4 p-4 glass-panel rounded-2xl">
-                <div className="w-10 h-10 bg-brand-olive text-white rounded-full flex items-center justify-center">
-                  <MapPin size={18} />
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest opacity-40">Locatie</p>
-                  <p className="text-sm font-medium">{ESTATE_INFO.location}</p>
-                </div>
+              <div className="btn-friendly bg-brand-bg text-brand-ink flex items-center gap-4 px-8 border border-brand-red/5">
+                <MapPin size={24} />
+                <span>ROUTE PLANNEN</span>
               </div>
             </div>
           </div>

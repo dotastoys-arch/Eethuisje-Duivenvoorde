@@ -17,12 +17,12 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://picsum.photos/seed/cozy-eatery/1080/1920"
-          alt="Eethuisje Duivenvoorde Interieur"
+          src="https://picsum.photos/seed/fries-snack/1080/1920"
+          alt="Verse patat en snacks"
           className="w-full h-full object-cover animate-slow-zoom"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-ink via-brand-ink/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/90 to-brand-bg/20" />
       </div>
 
       <div className="relative z-10 px-6 w-full max-w-lg mx-auto">
@@ -31,29 +31,29 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="uppercase tracking-[0.3em] text-[10px] mb-4 block font-bold text-brand-cream/60">
-            {greeting} • Wassenaar
+          <span className="uppercase tracking-[0.2em] text-[12px] mb-3 block font-bold text-brand-red">
+            {greeting} • WASSENAAR
           </span>
-          <h1 className="text-5xl md:text-7xl mb-6 leading-[1.1] text-brand-cream font-serif">
+          <h1 className="text-6xl md:text-7xl mb-4 leading-[0.9] text-brand-ink font-black">
             Eethuisje <br />
-            <span className="italic">Duivenvoorde</span>
+            <span className="text-brand-red">Duivenvoorde</span>
           </h1>
-          <p className="text-lg font-sans text-brand-cream/80 mb-10 leading-relaxed">
-            Versgebakken geluk in een modern jasje. Ontdek onze ambachtelijke snacks en sfeervolle ambiance.
+          <p className="text-lg font-medium text-brand-ink/70 mb-10 leading-snug max-w-xs">
+            Gewoon een simpel eethuisje voor de beste patat en snacks. Geen poespas, wel lekker snel.
           </p>
           
           <div className="grid grid-cols-1 gap-4">
             <a 
               href="#menu" 
-              className="bg-brand-olive text-white h-16 flex items-center justify-center rounded-2xl font-semibold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-2xl tap-highlight-none"
+              className="btn-friendly bg-brand-red text-white"
             >
-              Bekijk het Menu
+              Bekijk de Kaart
             </a>
             <button 
               onClick={() => document.getElementById('chat-toggle')?.click()}
-              className="bg-white/10 backdrop-blur-md border border-white/20 text-white h-16 flex items-center justify-center rounded-2xl font-semibold text-lg hover:bg-white/20 transition-all tap-highlight-none"
+              className="btn-friendly bg-brand-yellow text-brand-ink"
             >
-              Direct Bestellen
+              Stel een Vraag
             </button>
           </div>
         </motion.div>

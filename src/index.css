@@ -1,60 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Cormorant Garamond", serif;
-  --font-sans: "Inter", sans-serif;
-  --color-brand-olive: #5A5A40;
-  --color-brand-cream: #F5F2ED;
+  --font-sans: "Outfit", sans-serif;
+  --color-brand-red: #C41E3A; /* Classic Ketchup Red */
+  --color-brand-yellow: #FFB800; /* Mustard/Fries Yellow */
+  --color-brand-bg: #FAF9F6; /* Warm Cream */
   --color-brand-ink: #1A1A1A;
-  --radius-xl: 1.5rem;
+  --radius-xl: 1.25rem;
   --radius-2xl: 2rem;
 }
 
 body {
-  @apply bg-brand-cream text-brand-ink font-sans antialiased selection:bg-brand-olive/20;
-  /* Mobile-only focus: prevent horizontal scroll and optimize for touch */
+  @apply bg-brand-bg text-brand-ink font-sans antialiased selection:bg-brand-red/10;
   overflow-x: hidden;
   touch-action: manipulation;
 }
 
-/* Accessibility: Focus states */
-:focus-visible {
-  @apply outline-2 outline-offset-2 outline-brand-olive;
-}
-
-/* Micro-interactions */
-.tap-highlight-none {
-  -webkit-tap-highlight-color: transparent;
+h1, h2, h3, h4 {
+  @apply font-sans font-black tracking-tight;
 }
 
 .glass-panel {
-  @apply bg-white/90 backdrop-blur-xl border border-white/20 shadow-xl;
+  @apply bg-white border border-brand-red/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
 }
 
-/* Mobile-only navigation bar at bottom */
+.menu-item-row {
+  @apply border-b border-brand-red/5 py-4 flex justify-between items-center;
+}
+
 .mobile-nav {
-  @apply fixed bottom-0 left-0 right-0 h-20 bg-white/80 backdrop-blur-lg border-t border-brand-olive/10 z-40 flex items-center justify-around px-4;
+  @apply fixed bottom-4 left-4 right-4 h-16 bg-white/90 backdrop-blur-xl border border-brand-red/10 rounded-2xl z-40 flex items-center justify-around px-4 shadow-2xl;
 }
 
 .nav-item {
-  @apply flex flex-col items-center gap-1 text-[10px] uppercase tracking-widest font-semibold text-brand-ink/40 transition-colors;
+  @apply flex flex-col items-center gap-1 text-[10px] font-bold text-brand-ink/30 transition-all;
 }
 
 .nav-item.active {
-  @apply text-brand-olive;
+  @apply text-brand-red scale-110;
 }
 
-/* 2026 Visual Stability */
-img {
-  content-visibility: auto;
+/* Friendly Rounded Button */
+.btn-friendly {
+  @apply h-14 flex items-center justify-center rounded-2xl font-bold text-lg transition-all active:scale-95 shadow-lg;
 }
 
-@keyframes slow-zoom {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-.animate-slow-zoom {
-  animation: slow-zoom 20s ease-in-out infinite alternate;
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-red to-brand-yellow;
 }

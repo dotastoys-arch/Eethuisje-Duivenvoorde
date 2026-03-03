@@ -4,79 +4,74 @@ import { motion } from 'framer-motion';
 
 export default function Menu() {
   return (
-    <section id="menu" className="py-20 px-6 max-w-5xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl mb-4">Onze Menukaart</h2>
-        <p className="text-brand-olive italic font-serif text-lg">Vers van het land, bereid met liefde</p>
+    <section id="menu" className="py-20 px-6 max-w-lg mx-auto bg-white text-brand-ink">
+      <div className="flex items-center gap-3 mb-10">
+        <div className="w-10 h-[4px] bg-brand-red rounded-full"></div>
+        <h2 className="text-3xl font-black">Onze Kaart</h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 gap-12">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-serif mb-6 border-b-2 border-brand-olive pb-2">Verse Patat & Sauzen</h3>
-          <div className="space-y-1">
+          <h3 className="text-xs font-black uppercase tracking-[0.2em] mb-6 text-brand-red">PATAT & SAUZEN</h3>
+          <div className="space-y-4">
             {MENU_DATA.patat.map((item, i) => (
-              <div key={i} className="menu-item-row group">
-                <div>
-                  <h4 className="font-medium group-hover:text-brand-olive transition-colors">{item.name}</h4>
-                  <p className="text-xs text-brand-ink/60 italic">{item.description}</p>
+              <div key={i} className="flex justify-between items-center p-5 bg-brand-bg rounded-2xl border border-brand-red/5 hover:border-brand-red/20 transition-all">
+                <div className="pr-4">
+                  <h4 className="font-black text-lg leading-tight">{item.name}</h4>
+                  {item.description && <p className="text-[10px] font-bold uppercase opacity-40 mt-1">{item.description}</p>}
                 </div>
-                <span className="font-serif ml-4 whitespace-nowrap">{item.price}</span>
+                <span className="font-black text-xl text-brand-red italic">{item.price}</span>
               </div>
             ))}
           </div>
 
-          <h3 className="text-2xl font-serif mt-12 mb-6 border-b-2 border-brand-olive pb-2">Onze Snacks</h3>
-          <div className="space-y-1">
+          <h3 className="text-xs font-black uppercase tracking-[0.2em] mt-12 mb-6 text-brand-red">LEKKERE SNACKS</h3>
+          <div className="space-y-4">
             {MENU_DATA.snacks.map((item, i) => (
-              <div key={i} className="menu-item-row group">
-                <div>
-                  <h4 className="font-medium group-hover:text-brand-olive transition-colors">{item.name}</h4>
-                  <p className="text-xs text-brand-ink/60 italic">{item.description}</p>
+              <div key={i} className="flex justify-between items-center p-5 bg-brand-bg rounded-2xl border border-brand-red/5 hover:border-brand-red/20 transition-all">
+                <div className="pr-4">
+                  <h4 className="font-black text-lg leading-tight">{item.name}</h4>
+                  {item.description && <p className="text-[10px] font-bold uppercase opacity-40 mt-1">{item.description}</p>}
                 </div>
-                <span className="font-serif ml-4 whitespace-nowrap">{item.price}</span>
+                <span className="font-black text-xl text-brand-red italic">{item.price}</span>
               </div>
             ))}
           </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-serif mb-6 border-b-2 border-brand-olive pb-2">Specials & Schotels</h3>
-          <div className="space-y-1">
+          <h3 className="text-xs font-black uppercase tracking-[0.2em] mb-6 text-brand-red">BROODJES & SCHOTELS</h3>
+          <div className="space-y-4">
             {MENU_DATA.specials.map((item, i) => (
-              <div key={i} className="menu-item-row group">
-                <div>
-                  <h4 className="font-medium group-hover:text-brand-olive transition-colors">{item.name}</h4>
-                  <p className="text-xs text-brand-ink/60 italic">{item.description}</p>
+              <div key={i} className="flex justify-between items-center p-5 bg-brand-bg rounded-2xl border border-brand-red/5 hover:border-brand-red/20 transition-all">
+                <div className="pr-4">
+                  <h4 className="font-black text-lg leading-tight">{item.name}</h4>
+                  {item.description && <p className="text-[10px] font-bold uppercase opacity-40 mt-1">{item.description}</p>}
                 </div>
-                <span className="font-serif ml-4 whitespace-nowrap">{item.price}</span>
+                <span className="font-black text-xl text-brand-red italic">{item.price}</span>
               </div>
             ))}
           </div>
 
-          <h3 className="text-2xl font-serif mt-12 mb-6 border-b-2 border-brand-olive pb-2">IJs & Milkshakes</h3>
-          <div className="space-y-1">
+          <h3 className="text-xs font-black uppercase tracking-[0.2em] mt-12 mb-6 text-brand-red">IJS & SHAKES</h3>
+          <div className="space-y-4">
             {MENU_DATA.ijs.map((item, i) => (
-              <div key={i} className="menu-item-row group">
-                <div>
-                  <h4 className="font-medium group-hover:text-brand-olive transition-colors">{item.name}</h4>
-                  <p className="text-xs text-brand-ink/60 italic">{item.description}</p>
+              <div key={i} className="flex justify-between items-center p-5 bg-brand-bg rounded-2xl border border-brand-red/5 hover:border-brand-red/20 transition-all">
+                <div className="pr-4">
+                  <h4 className="font-black text-lg leading-tight">{item.name}</h4>
+                  {item.description && <p className="text-[10px] font-bold uppercase opacity-40 mt-1">{item.description}</p>}
                 </div>
-                <span className="font-serif ml-4 whitespace-nowrap">{item.price}</span>
+                <span className="font-black text-xl text-brand-red italic">{item.price}</span>
               </div>
             ))}
-          </div>
-          
-          <div className="mt-12 p-6 bg-brand-olive/5 rounded-2xl border border-brand-olive/10 italic text-sm text-center">
-            <p>"Gezellige cafetaria, erg goede patat en heel vriendelijke mensen."</p>
-            <p className="mt-2 text-xs opacity-60">— Local Guide Review</p>
           </div>
         </motion.div>
       </div>
