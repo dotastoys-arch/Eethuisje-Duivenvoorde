@@ -25,33 +25,34 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/90 to-brand-bg/20" />
       </div>
 
-      <div className="relative z-10 px-6 w-full max-w-lg mx-auto">
+      <div className="relative z-10 px-6 md:px-12 lg:px-24 w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="max-w-2xl"
         >
-          <span className="uppercase tracking-[0.2em] text-[12px] mb-3 block font-bold text-brand-red">
+          <span className="uppercase tracking-[0.2em] text-[12px] md:text-sm mb-3 block font-bold text-brand-red">
             {greeting} • WASSENAAR
           </span>
-          <h1 className="text-6xl md:text-7xl mb-4 leading-[0.9] text-brand-ink font-black">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl mb-6 leading-[0.9] text-brand-ink font-black">
             Eethuisje <br />
             <span className="text-brand-red">Duivenvoorde</span>
           </h1>
-          <p className="text-lg font-medium text-brand-ink/70 mb-10 leading-snug max-w-xs">
+          <p className="text-lg md:text-2xl font-medium text-brand-ink/70 mb-10 leading-snug max-w-md md:max-w-xl">
             Gewoon een simpel eethuisje voor de beste patat en snacks. Geen poespas, wel lekker snel.
           </p>
           
-          <div className="grid grid-cols-1 gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md md:max-w-none">
             <a 
               href="#menu" 
-              className="btn-friendly bg-brand-red text-white"
+              className="btn-friendly bg-brand-red text-white md:text-lg md:px-10 md:py-5"
             >
               Bekijk de Kaart
             </a>
             <button 
               onClick={() => document.getElementById('chat-toggle')?.click()}
-              className="btn-friendly bg-brand-yellow text-brand-ink"
+              className="btn-friendly bg-brand-yellow text-brand-ink md:text-lg md:px-10 md:py-5"
             >
               Stel een Vraag
             </button>
