@@ -128,6 +128,44 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* Image Gallery */}
+        <section className="py-20 md:py-32 bg-brand-bg px-6 md:px-12 lg:px-24">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-3 mb-10 md:mb-16">
+              <div className="w-10 h-[4px] bg-brand-red rounded-full"></div>
+              <h2 className="text-3xl md:text-5xl font-black">Sfeer & Smaak</h2>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+              {[
+                { seed: 'burger-meal', alt: 'Sappige Hamburger', className: 'col-span-2 row-span-2 aspect-square' },
+                { seed: 'fries-basket', alt: 'Verse Friet', className: 'col-span-1 aspect-square' },
+                { seed: 'milkshake-drink', alt: 'Koude Milkshake', className: 'col-span-1 aspect-square' },
+                { seed: 'cafe-interior', alt: 'Gezellig Eethuisje', className: 'col-span-2 md:col-span-1 aspect-video md:aspect-square' },
+                { seed: 'fried-snacks', alt: 'Lekkere Snacks', className: 'col-span-1 aspect-square' },
+                { seed: 'dutch-kroket', alt: 'Krokante Kroket', className: 'col-span-1 aspect-square' },
+              ].map((img, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group ${img.className}`}
+                >
+                  <div className="absolute inset-0 bg-brand-ink/10 group-hover:bg-transparent transition-colors z-10" />
+                  <img 
+                    src={`https://picsum.photos/seed/${img.seed}/800/800`} 
+                    alt={img.alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* 2026 Mobile-Only Navigation Bar */}
